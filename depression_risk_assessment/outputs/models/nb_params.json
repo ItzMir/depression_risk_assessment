@@ -1,0 +1,18 @@
+{
+  "model": "nb",
+  "chosen_threshold": 0.4560000000000001,
+  "feature_names": [
+    "word_count",
+    "char_count",
+    "indicative_count",
+    "indicative_ratio",
+    "first_person_count",
+    "first_person_ratio",
+    "negative_word_count",
+    "negative_word_ratio",
+    "question_count",
+    "exclamation_count",
+    "ellipsis_count",
+    "late_night_flag"
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "random_seed": 42,
+  "test_size": 0.2,
+  "k_folds": 5,
+
+  "data": {
+    "raw_path": "data/raw/twitter_depression.csv",
+    "post_id_column": "post_id",
+    "text_column": "post_text",
+    "label_column": "label",
+    "user_column": "user_id",
+    "time_column": "post_created"
+  },
+
+  "timestamp_format": "%a %b %d %H:%M:%S %z %Y",
+
+  "valid_labels": [0, 1],
+
+  "lexicons": {
+    "first_person": "lexicons/first_person_singular.txt",
+    "indicative": "lexicons/indicative_words.txt",
+    "negative_emotion": "lexicons/negative_emotion.txt",
+    "audit_target": "lexicons/audit_target_words.txt"
+  },
+
+  "features": [
+    "word_count",
+    "char_count",
+    "indicative_count",
+    "indicative_ratio",
+    "first_person_count",
+    "first_person_ratio",
+    "negative_word_count",
+    "negative_word_ratio",
+    "question_count",
+    "exclamation_count",
+    "ellipsis_count",
+    "late_night_flag"
+  ],
+
+  "models": {
+    "logistic": {
+      "learning_rate": 0.01,
+      "epochs": 1000,
+      "l2_lambda": 0.01
+    },
+    "tree": {
+      "max_depth": 5,
+      "min_samples_split": 10,
+      "min_samples_leaf": 5,
+      "n_thresholds": 10
+    },
+    "knn": {
+      "k": 5
+    },
+    "naive_bayes": {
+      "var_smoothing": 1e-9
+    }
+  }
+}
